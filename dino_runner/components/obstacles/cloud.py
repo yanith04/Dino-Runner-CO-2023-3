@@ -1,5 +1,4 @@
 import random
-
 from dino_runner.utils.constants import CLOUD, SCREEN_WIDTH
 
 
