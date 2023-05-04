@@ -1,6 +1,6 @@
 import pygame
 from dino_runner.utils.constants import JUMPING, RUNNING, DUCKING
-class dinosaur:
+class Dinosaur:
     X_POS =80
     Y_POS = 310
     Y_POS_DUCK =340

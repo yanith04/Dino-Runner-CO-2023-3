@@ -1,7 +1,6 @@
+
 import random
 from dino_runner.utils.constants import CLOUD, SCREEN_WIDTH
-
-
 class Cloud:
     frames_clouds= 0
     clouds =[]
@@ -24,7 +23,7 @@ class Cloud:
             self.x_pos_cloud = SCREEN_WIDTH + random.randint(2500, 3000)
             self.y_pos_cloud = random.randint(50,100) 
 
-    def draw (self, screen,):
+    def draw_ground (self, screen,):
         
         for cloud in self.clouds:
             cloud[0] -= cloud[2]
@@ -41,8 +40,4 @@ class Cloud:
 
             if self.frames_clouds < 11 or self.frames_clouds < 31 or self.frames_clouds < 51 or self.frames_clouds <71 or self.frames_clouds <81 :
                for cloud in self.clouds:
-
                    screen.blit(self.image,(cloud[0], cloud[1]))
-          
-            
-       

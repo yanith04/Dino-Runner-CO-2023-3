@@ -1,18 +1,28 @@
+
 import pygame
+
+
+
+
+
+
+
+#from pygame.locals import *
 from dino_runner.utils.constants import SCREEN_WIDTH
 
+
 class Obstacle:
-    def __init__(self,image):   
+    def __init__(self, image, type):
+        self.type = type
         self.image = image
-        self.rect= self.image.get_rect()
-        self.rect.x= SCREEN_WIDTH
-        
-    def update(self,game_speed,player):
+        self.rect = self.image[self.type].get_rect()
+        self.rect.x = SCREEN_WIDTH
+
+    def update(self, game_speed, player):
         self.rect.x -= game_speed
         if self.rect.colliderect(player.dino_rect):
             pygame.time.delay(100)
-            player.dino_dead= True
-        
+            player.dino_dead = True  # establecer temporizador de 1 segundo
+
     def draw(self, screen):
-        screen.blit(self.image, self.rect)
-        
+        screen.blit(self.image[self.type], (self.rect.x, self.rect.y))
