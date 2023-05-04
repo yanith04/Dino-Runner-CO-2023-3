@@ -1,14 +1,7 @@
 
 import pygame
-
-
-
-
-
-
-
-#from pygame.locals import *
 from dino_runner.utils.constants import SCREEN_WIDTH
+from dino_runner.utils.constants import DINO_DEAD
 
 
 class Obstacle:
@@ -22,7 +15,7 @@ class Obstacle:
         self.rect.x -= game_speed
         if self.rect.colliderect(player.dino_rect):
             pygame.time.delay(100)
-            player.dino_dead = True  # establecer temporizador de 1 segundo
+            player.dino_dead = True  
 
     def draw(self, screen):
         screen.blit(self.image[self.type], (self.rect.x, self.rect.y))
