@@ -4,7 +4,7 @@ from dino_runner.utils.constants import CLOUD, SCREEN_WIDTH
 class Cloud:
     frames_clouds= 0
     clouds =[]
-    for index in range(6):
+    for index in range(4):
         x_pos_cloud =1200
         y_pos_cloud = random.randint(0,360)
         game_speed = random.randint(1,8)
@@ -24,7 +24,6 @@ class Cloud:
             self.y_pos_cloud = random.randint(50,100) 
 
     def draw_ground (self, screen,):
-        
         for cloud in self.clouds:
             cloud[0] -= cloud[2]
             if cloud[0] < -200:
